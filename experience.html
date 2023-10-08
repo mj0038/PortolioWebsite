@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Experience - Mridul Jhawar</title>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li class="brand-name"><a href="index.html">Mridul Jhawar</a></li>
+        </ul>
+    </nav>
+
+    <!-- Landing Section -->
+    <div class="landing">
+        <h1>Experiences</h1>
+        <p>Scroll down to see more</p>
+        <button onclick="scrollToExperience()">View Experiences</button>
+    </div>
+
+    <!-- ADP Experience Content -->
+    <div class="content" id="adp-content">
+        <h1>2023 Summer Internship at Automated Data Processing (ADP)</h1>
+
+        <!-- Skills Section for ADP -->
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>DynamoDB</span>
+                <span>AWS (Glue, State Machine, Lambda)</span>
+                <span>Jenkins</span>
+                <span>DataBricks</span>
+                <span>Terraform</span>
+                <span>PySpark</span>
+                <span>Postman</span>
+            </div>
+        </div>
+
+        <div class="experience-detail">
+            <img src="images/adp-logo.png" alt="ADP Logo" class="experience-img">
+            <div class="experience-text">
+                <p>Engineered an ETL workflow utilizing AWS Glue, State Machine & Lambda for migrating data to DynamoDB.</p>
+                <p>Enhanced data processing speed by 20% by streamlining 5 data workflows using Python and SQL.</p>
+                <p>Achieved annual savings of $120K through continuous deployment & integration of data pipelines via Jenkins.</p>
+                <p>Conducted unit testing of REST APIs in Postman for website and client application accessibility across 6 tables.</p>
+                <p>Boosted data processing by 15% by creating & deploying 10 AWS Lambda functions using Terraform.</p>
+            </div>
+        </div>
+
+        <!-- Button to scroll to next experience -->
+        <div class="scroll-button">
+            <button onclick="scrollToNextExperience()">Click to scroll</button>
+        </div>
+
+        <!-- Kotak Securities Experience -->
+        <div class="content-section" id="kotak-content">
+            <h1>Software Engineer (May 2022–April 2022) at FundExpert by Kotak Securities</h1>
+            <img src="images/FundExpert_white.jpeg" alt="Kotak Securities Logo" class="experience-img">
+            <div class="experience-text">
+                <p>Created a SQL database and developed GraphQL APIs, and conducted comprehensive test cases for retrieval analysis.</p>
+                <p>Utilized Agile methods to engineer Python-based microservices, enabling real-time product price comparison.</p>
+                <p>Developed various utilities, user-defined Python functions, & frameworks, increasing sales by 4.5%.</p>
+                <p>Led initiatives to bolster data quality, security, & compliance, implementing solutions that reduced breaches by 9%.</p>
+                <p>Took end-to-end ownership of key services and applications, driving 2 successful projects to completion.</p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function scrollToExperience() {
+    const experienceContent = document.getElementById("adp-content");
+    experienceContent.scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToNextExperience() {
+    const nextExperienceContent = document.getElementById("kotak-content");
+    nextExperienceContent.scrollIntoView({ behavior: 'smooth' });
+}
+
+    </script>
+
+</body>
+
+</html>
