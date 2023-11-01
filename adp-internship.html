@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>ADP Internship - Mridul Jhawar</title>
+    <style>
+        /* Add styles here to make sure they are only applied to this page */
+        .landing-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="experience.html" class="active">Experience</a></li>
+            <li class="brand-name"><a href="index.html">Mridul Jhawar</a></li>
+        </ul>
+    </nav>
+
+    <!-- ADP Internship Content -->
+    <div class="content" id="adp-internship-content">
+        <div class="landing-section" id="landing-section">
+            <h1>Automated Data Processing (ADP) - Data Engineer Intern</h1>
+
+            <!-- Skills Section for ADP -->
+            <div class="skills-section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>DynamoDB</span>
+                    <span>AWS (Glue, State Machine, Lambda)</span>
+                    <span>Jenkins</span>
+                    <span>DataBricks</span>
+                    <span>Terraform</span>
+                    <span>PySpark</span>
+                    <span>Postman</span>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-down" id="scroll-down-button">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <div class="content-section" id="adp-experience-detail">
+            <!-- Experience Detail -->
+            <div class="experience-detail">
+                <!-- ADP logo -->
+                <div class="image-container">
+                    <img src="images/adp-logo.png" alt="ADP Logo" class="experience-img">
+                </div>
+                <div class="experience-text">
+                    <p>Engineered an ETL workflow utilizing AWS Glue, State Machine & Lambda for migrating data to DynamoDB.</p>
+                    <p>Enhanced data processing speed by 20% by streamlining 5 data workflows using Python and SQL.</p>
+                    <p>Achieved annual savings of $120K through continuous deployment & integration of data pipelines via Jenkins.</p>
+                    <p>Conducted unit testing of REST APIs in Postman for website and client application accessibility across 6 tables.</p>
+                    <p>Boosted data processing by 15% by creating & deploying 10 AWS Lambda functions using Terraform.</p>
+                </div>
+            </div>
+
+            <!-- Button to go back to main experience page -->
+            <div class="back-button">
+                <a href="experience.html">Back to Experiences</a>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
+
+    <script>
+        // Scroll to experience detail
+        document.getElementById('scroll-down-button').addEventListener('click', () => {
+            document.getElementById('adp-experience-detail').style.display = 'block';
+            document.getElementById('adp-experience-detail').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('adp-experience-detail').style.display = 'none';
+        });
+
+        // Show or hide the back-to-top button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.querySelector(".back-to-top").style.display = "block";
+            } else {
+                document.querySelector(".back-to-top").style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+
+</html>
