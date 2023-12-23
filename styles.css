@@ -1,21 +1,32 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #000; /* Black background */
     color: #fff; /* White text color */
-    margin: 0;
-    padding: 0;
-    overflow: auto; /* Prevents scroll if the image is larger than the viewport */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Navigation Bar */
 nav {
-    background-color: #333;
+    background-color: #333; /* Dark background for navbar */
     overflow: hidden;
+    position: fixed; /* Fixed at the top */
+    width: 100%; /* Full width */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Make sure it's above other items */
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Aligns nav items to the left */
 }
 
 nav li {
@@ -28,6 +39,7 @@ nav li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 nav li a:hover {
@@ -36,9 +48,22 @@ nav li a:hover {
 }
 
 .brand-name {
-    float: right;
+    margin-left: auto; /* Pushes the brand name to the right */
 }
 
+/* Responsive navigation */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav li {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+/* Profile Section */
 .profile-section {
     max-width: 800px;
     margin: 50px auto;
@@ -51,8 +76,8 @@ nav li a:hover {
 }
 
 .profile-pic {
-    max-width:5%;
-    margin-left: 30px;
+    max-width: 150px; /* Adjust size of profile picture */
+    border-radius: 50%; /* Circular profile picture */
 }
 
 .profile-text {
@@ -63,21 +88,14 @@ nav li a:hover {
     font-size: 0.9em;
     line-height: 1.6;
     margin-bottom: 10px;
-    font-weight: lighter;
 }
 
 .profile-text h1 {
     font-size: 2.2em;
     margin-top: 10px;
-    font-weight: bold;
 }
 
-.social-icons {
-    position: relative;
-    z-index: 1000;
-    margin-top: 20px;
-}
-
+/* Social Icons */
 .social-icons a {
     margin-right: 15px;
     text-decoration: none;
@@ -89,22 +107,36 @@ nav li a:hover {
     color: #aaa;
 }
 
-.content,.content-section {
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 100;
+}
+
+.back-to-top:hover {
+    background-color: #555;
+}
+
+/* Content Section */
+.content, .content-section {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 100px auto 50px; /* Adjust top margin to account for fixed navbar */
     padding: 30px 20px;
     text-align: center;
 }
 
+/* Skills Section */
 .skills-section h2 {
     font-size: 2em;
     margin-bottom: 15px;
-}
-
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .skills-grid span {
@@ -114,10 +146,11 @@ nav li a:hover {
     border-radius: 5px;
 }
 
+/* Experience Section */
 .experience-img {
-    width: 40%;  /* Adjust based on desired size */
-    max-width: 300px;  /* Maximum width */
-    margin: 20px auto; /* Space above and below the logo */
+    width: 40%;
+    max-width: 300px;
+    margin: 20px auto;
     display: block;
 }
 
@@ -127,70 +160,10 @@ nav li a:hover {
     margin: 20px 0;
 }
 
-.landing {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #000; /* you can set a background image or color */
-}
-
-.landing h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.landing p {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-}
-
-.landing button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.landing button:hover {
-    background-color: #555;
-}
-
-.content-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-y: auto;
-
-    .experiences-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Creates a 4-column grid */
-        gap: 20px; /* Spacing between the grid items */
-        padding: 20px; /* Padding around the grid */
-    }
-
-    .experience {
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .experience:hover {
-        background-color: #555;
-    }
-    .image-container {
-    width: 100%; /* Or a fixed width if preferred */
-    height: 150px; /* Fixed height, adjust as needed */
+/* Utility Classes */
+.image-container {
+    width: 100%;
+    height: 150px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -203,13 +176,7 @@ nav li a:hover {
     object-fit: contain;
 }
 
-/* Additional styling for your back button if needed */
-.back-button a {
-    text-decoration: none;
-    color: #000;
-    /* Additional styles here */
-}
-/* Add this to your existing CSS */
+/* Scroll Down Indicator */
 .scroll-down {
     text-align: center;
     margin-top: 20px;
@@ -229,32 +196,29 @@ nav li a:hover {
     }
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+/* Add these styles for the 'grid-container' and 'experience' if you have grid sections */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.experience {
     background-color: #333;
     color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 100;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s;
 }
 
-.back-to-top:hover {
-    background-color: #555;
+.experience:hover {
+    transform: scale(1.05);
 }
 
-/* Display back-to-top button when scrolling down */
-window.onscroll = function() {
-    scrollFunction()
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.querySelector(".back-to-top").style.display = "block";
-    } else {
-        document.querySelector(".back-to-top").style.display = "none";
-    }
+/* Clearfix for floating elements */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
