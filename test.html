@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Testing
+        </title>
+        <link rel="stylesheet" href="styles/experience.css">
+        <style>    
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+    
+            .modal-content {
+                background-color: darkgray;
+                margin: 15% auto; /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 70%; 
+                color: black;
+            }
+    
+            .close-button {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+    
+            .close-button:hover,
+            .close-button:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="content-wrap">
+                <div class="content" onclick="openModal('modalProject1')">
+                    <div class="photo-grid">
+                        <img class="company-logo" src="icons/adp-logo.png" alt="ADP Logo">
+                    </div>
+                    <div class="experience-details">
+                        <h3>Application Developer Intern</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">SQL</span>
+                            <span class="tech-item">PySpark</span>
+                            <span class="tech-item">AWS (Glue, Lambda, State Machine, S3, SQS, IAM)</span>
+                            <span class="tech-item">Databricks</span>
+                            <span class="tech-item">Jenkins</span>
+                            <span class="tech-item">Postman</span>
+                            <span class="tech-item">Terraform</span>
+                            <span class="tech-item">Jira</span>
+                            <span class="tech-item">Git</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="modalProject1" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeModal('modalProject1')">&times;</span>
+                        <h3>Application Developer Intern</h3>
+                        <p>Description of Project 1...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = "block";
+            }
+    
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = "none";
+            }
+    
+            window.onclick = function(event) {
+                if (event.target.className === "modal") {
+                    event.target.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+    </html>

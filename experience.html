@@ -1,112 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience - Mridul Jhawar</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f0f0f0; /* Light gray background */
-        }
-
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        nav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increase the min size to 300px or as desired */
-            grid-gap: 10px;
-            padding: 10px;
-            justify-content: center;
-            margin: auto; /* Centering the grid */
-            max-width: 1200px; /* Adjust max width as needed */
-        }
-
-        .experience {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            background-size: 200% 200%;
-            animation: gradientBG 15s ease infinite;
-            color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-            position: relative;
-            cursor: pointer; /* Indicate the item is clickable */
-        }
-
-        .experience:hover {
-            transform: scale(1.05);
-        }
-
-        .experience img {
-            max-width: 100px;
-            margin-bottom: 10px;
-        }
-
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/general.css">
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html">Homepage</a>
-        <a href="about.html">About</a> <!-- Added "About" page link -->
-        <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a> <!-- Assuming you have a projects page -->
-        <a href="contact.html">Contact</a> <!-- Assuming you have a contact page -->
-        <a href="index.html">Mridul Jhawar</a>
-    </nav>
-
-    <!-- Grid Container -->
-    <div class="grid-container">
-        <!-- Experience 1 -->
-        <div class="experience" onclick="location.href='adp-internship.html';">
-            <img src="images/adp-logo.png" alt="ADP Logo">
-            <h3>ADP</h3>
-            <p>Summer Internship 2023</p>
-        </div>
-
-        <!-- Experience 2 -->
-        <div class="experience" onclick="location.href='kotak-Securities.html';">
-            <img src="images/FundExpert_white.jpeg" alt="Kotak Securities Logo">
-            <h3>Kotak Securities</h3>
-            <p>Software Engineer 2022</p>
-        </div>
-
-        <!-- Additional experiences can be added here -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
     </div>
 
+    <div class="page-container">
+        <div class="content-wrap">
+            <div class="content" onclick="openModal('modalProject1')">
+                <div class="photo-grid">
+                    <img class="company-logo" src="icons/adp-logo.png" alt="ADP Logo">
+                </div>
+                <div class="experience-details">
+                    <h3>Application Developer Intern</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">SQL</span>
+                        <span class="tech-item">PySpark</span>
+                        <span class="tech-item">AWS (Glue, Lambda, State Machine, S3, SQS, IAM)</span>
+                        <span class="tech-item">Databricks</span>
+                        <span class="tech-item">Jenkins</span>
+                        <span class="tech-item">Postman</span>
+                        <span class="tech-item">Terraform</span>
+                        <span class="tech-item">Jira</span>
+                        <span class="tech-item">Git</span>
+                    </div>
+                </div>
+            </div>
+            <div id="modalProject1" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal('modalProject1')">&times;</span>
+                    <h3>Application Developer Intern</h3>
+                    <p>Description of the Application Developer Intern role...</p>
+                </div>
+            </div>
+            <!-- Experience 2 -->
+            <div class="content" onclick="openModal('modalProject2')">
+                <div class="photo-grid">
+                    <img class="company-logo" src="icons/FundExpert_white.jpeg" alt="ADP Logo">
+                </div>
+                <div class="experience-details">
+                    <h3>Data Scientist</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">SQL</span>
+                        <span class="tech-item">PyTorch</span>
+                        <span class="tech-item">AWS (Glue, Lambda, State Machine, S3, SQS, IAM)</span>
+                    </div>
+                </div>
+            </div>
+            <div id="modalProject2" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal('modalProject2')">&times;</span>
+                    <h3>Data Scientist</h3>
+                    <p>Description of the Data Scientist role...</p>
+                </div>
+            </div>
+            <div class="content" onclick="openModal('modalProject3')">
+                <div class="photo-grid">
+                    <img class="company-logo" src="icons/adp-logo.png" alt="ADP Logo">
+                </div>
+                <div class="experience-details">
+                    <h3>Software Engineer - Freelancing Gig</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">SQL</span>
+                        <span class="tech-item">PySpark</span>
+                        <span class="tech-item">AWS (Glue, Lambda, State Machine, S3, SQS, IAM)</span>
+                        <span class="tech-item">Databricks</span>
+                        <span class="tech-item">Jenkins</span>
+                        <span class="tech-item">Postman</span>
+                        <span class="tech-item">Terraform</span>
+                        <span class="tech-item">Jira</span>
+                        <span class="tech-item">Git</span>
+                    </div>
+                </div>
+            </div>
+            <div id="modalProject3" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal('modalProject2')">&times;</span>
+                    <h3>Data Scientist</h3>
+                    <p>Description of the Data Scientist role...</p>
+                </div>
+            </div>
+            <div class="content" onclick="openModal('modalProject4')">
+                <div class="photo-grid">
+                    <img class="company-logo" src="icons/wvu-logo.svg" alt="ADP Logo">
+                </div>
+                <div class="experience-details">
+                    <h3> Undergraduate Data Analyst Researcher</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">SQL</span>
+                        <span class="tech-item">Tableau</span>
+                        <span class="tech-item">CSS (Glue, Lambda, State Machine, S3, SQS, IAM)</span>
+                        <span class="tech-item">HTML</span>
+                        <span class="tech-item">Git</span>
+                        <span class="tech-item">ImageJ</span>
+                    </div>
+                </div>
+            </div>
+            <div id="modalProject4" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal('modalProject2')">&times;</span>
+                    <h3>Data Analyst</h3>
+                    <p>Description of the Data Analyst role...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2023 Mridul Jhawar. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/mj0038" target="_blank">
+                    <img src="icons/github-mark.svg" alt="GitHub">
+                </a>
+                <a href="https://linkedin.com/in/mridul-jhawar/" target="_blank">
+                    <img src="icons/linkedin.svg.png" alt="LinkedIn">
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank">
+                    <img src="icons/twitter.svg" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
