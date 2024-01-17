@@ -53,6 +53,7 @@ html, body {
     background-color: #333;
     margin-bottom: 20px;
     width: 100%; /* Adjusted to take the full width of the grid column */
+    overflow: hidden;
     transition: background-color 0.3s ease; /* Smooth transition for background color */
 
 }
@@ -80,7 +81,7 @@ html, body {
 }
 
 .experience-details {
-    background-color: grey;
+    background-color: #333;
     padding: 15px;
     text-align: center;
     font-size: calc(1vw + 1vh + 0.5vmin);
@@ -144,13 +145,19 @@ html, body {
     border: 1px solid #888;
     width: 70%; 
     color: black;
+    position: relative;
 }
 
 .close-button {
-    color: #aaa;
-    float: right;
+    color: black;
+    position: absolute; /* Use absolute positioning within the modal */
+    top: 10px; /* Position it towards the top */
+    right: 10px; /* Position it towards the right */
     font-size: 28px;
     font-weight: bold;
+    padding: 10px; /* Increase padding to make it easier to click/tap */
+    cursor: pointer; /* Ensure it's obviously clickable */
+    z-index: 10; /* Ensure it's above other elements */
 }
 
 .close-button:hover,
@@ -163,7 +170,14 @@ html, body {
     .content-wrap {
         grid-template-columns: 1fr; /* Stack the boxes on smaller screens */
     }
+    
+    /* Adjust modal content size for very small screens */
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+    }
 }
+
 
 .footer {
     background-color: #333;
