@@ -4,6 +4,8 @@
         <title>Projects</title>
         <link rel="stylesheet" href="styles/homepage.css">
         <link rel="stylesheet" href="styles/projects.css">
+        <link rel="stylesheet" href="styles/general.css">
+
     </head>
     <body>
         <div>
@@ -19,9 +21,26 @@
                     <div class="llm-title">
                         <h2>LLM Projects</h2>
                     </div>
+                    <button class="arrow left-arrow" onclick="shiftSlide(-1)">&#10094;</button> <!-- Left arrow -->
                     <div class="section-content">
                         <!-- Project 1 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
+                            <div class="photo-grid">
+                                <img class="project-picture" src="icons/nutritionapp_thumbnail.jpeg" alt="LLM Comparison Logo">
+                            </div>
+                            <div class="experience-details">
+                                <h3>Personal Nutritionist using Gemini Pro, Langchain and Streamlit </h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Gemini Pro</span>
+                                    <span class="tech-item">Langchain</span>
+                                    <span class="tech-item">Streamlit</span>
+                                    <span class="tech-item">Python</span>
+                                </div>
+                            </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
+                        </div>   
+                        <!-- Project 2 -->
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
@@ -37,9 +56,112 @@
                                     <span class="tech-item">Git</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
+                        </div>  
+                        <!-- Project 3-->
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
+                            <div class="photo-grid">
+                                <img class="project-picture" src="icons/llama-2.jpeg" alt="LLM Comparison Logo">
+                            </div>
+                            <div class="experience-details">
+                                <h3>Chatbot with LLaMA-2 and Python</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Langchain</span>
+                                    <span class="tech-item">LlaMA-2</span>
+                                    <span class="tech-item">Transformers</span>
+                                    <span class="tech-item">Flask</span>
+                                    <span class="tech-item">Pinecone</span>
+                                    <span class="tech-item">Hugging Face</span>
+                                   
+                                </div>
+                            </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
+                        </div> 
+                        <!-- Project 4 -->
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
+                            <div class="photo-grid">
+                                <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
+                            </div>
+                            <div class="experience-details">
+                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">PyTorch</span>
+                                    <span class="tech-item">Transformers</span>
+                                    <span class="tech-item">NLTK</span>
+                                    <span class="tech-item">Hugging Face</span>
+                                    <span class="tech-item">BeautifulSoup</span>
+                                    <span class="tech-item">Git</span>
+                                </div>
+                            </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
+                        </div>                          
+                    </div>
+                    <button class="arrow right-arrow" onclick="shiftSlide(1)">&#10095;</button> <!-- Right arrow -->
+                </div> 
+                <!-- NLP Projects -->
+                <div class="llm-section"> 
+                    <div class="llm-title">
+                        <h2>NLP Projects</h2>
+                    </div>
+                    <div class="section-content">
+                        
+                        <!-- Project 1 -->
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
+                            <div class="photo-grid">
+                                <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
+                            </div>
+                            <div class="experience-details">
+                                <h3>Amazon Sentiment Analysis</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">NLTK (wordnet, stopwords, lemmatizer</span>
+                                    <span class="tech-item">Scikit-learn (Perceptron, Logistic Regression, MultinomiaNB)</span>
+                                    <span class="tech-item">BeautifulSoup</span>
+                                    <span class="tech-item">Vectorization</span>
+                                </div>
+                            </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
+                        </div>   
+                        <!-- Project 2 -->
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
+                            <div class="photo-grid">
+                                <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
+                            </div>
+                            <div class="experience-details">
+                                <h3>Enhanced POS Tagging using Hidden MArkov Models</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Viterbi Decoding</span>
+                                    <span class="tech-item"> Greedy Decoding</span>
+                                    <span class="tech-item">Hidden Markov Models</span>
+                                    <span class="tech-item">NLTK</span>
+                                    <span class="tech-item">JSON</span>
+                                    <span class="tech-item">Python</span>
+                                </div>
+                            </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
+                        </div>   
+                        <!-- Project 2 -->
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
+                            <div class="photo-grid">
+                                <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
+                            </div>
+                            <div class="experience-details">
+                                <h3>Deep Learning Models on NER</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">BiLSTM</span>
+                                    <span class="tech-item">BiLSTM with GloVe Embeddings</span>
+                                    <span class="tech-item">Transformer Encoder Model</span>
+                                    <span class="tech-item"> PyTorch</span>
+                                    <span class="tech-item">Conlleval</span>
+                                    <span class="tech-item">Google Collaborative</span>
+                                    <span class="tech-item">Jupyter Lab</span>
+                                </div>
+                            </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>   
                     </div>
-                </div> 
+                    <button class="arrow right-arrow" onclick="shiftSlide(1)">&#10095;</button> <!-- Right arrow -->
+                </div>
                 <!-- Deep Learning -->
                 <div class="llm-section"> 
                     <div class="llm-title">
@@ -47,60 +169,27 @@
                     </div>
                     <div class="section-content">
                         <!-- Project 1 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
                             <div class="experience-details">
-                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
+                                <h3>Breast Cancer Cell Classification</h3>
                                 <div class="tech-stack">
+                                    <span class="tech-item">CNN</span>
+                                    <span class="tech-item">Scikit-learn</span>
+                                    <span class="tech-item">Tensorflow</span>
+                                    <span class="tech-item">Keras</span>
+                                    <span class="tech-item">CanerNet</span>
                                     <span class="tech-item">Python</span>
-                                    <span class="tech-item">PyTorch</span>
-                                    <span class="tech-item">Transformers</span>
-                                    <span class="tech-item">NLTK</span>
-                                    <span class="tech-item">Hugging Face</span>
-                                    <span class="tech-item">BeautifulSoup</span>
                                     <span class="tech-item">Git</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>   
-                        <!-- Project 2 -->
-                        <div class="content">
-                            <div class="photo-grid">
-                                <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
-                            </div>
-                            <div class="experience-details">
-                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
-                                <div class="tech-stack">
-                                    <span class="tech-item">Python</span>
-                                    <span class="tech-item">PyTorch</span>
-                                    <span class="tech-item">Transformers</span>
-                                    <span class="tech-item">NLTK</span>
-                                    <span class="tech-item">Hugging Face</span>
-                                    <span class="tech-item">BeautifulSoup</span>
-                                    <span class="tech-item">Git</span>
-                                </div>
-                            </div>
-                        </div>  
-                        <!-- Project 3 -->
-                        <div class="content">
-                            <div class="photo-grid">
-                                <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
-                            </div>
-                            <div class="experience-details">
-                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
-                                <div class="tech-stack">
-                                    <span class="tech-item">Python</span>
-                                    <span class="tech-item">PyTorch</span>
-                                    <span class="tech-item">Transformers</span>
-                                    <span class="tech-item">NLTK</span>
-                                    <span class="tech-item">Hugging Face</span>
-                                    <span class="tech-item">BeautifulSoup</span>
-                                    <span class="tech-item">Git</span>
-                                </div>
-                            </div>
-                        </div>    
+                       
                     </div>
+                    <button class="arrow right-arrow" onclick="shiftSlide(1)">&#10095;</button> <!-- Right arrow -->
                 </div>
                 <!-- Machine Learning Section -->
                 <div class="llm-section"> 
@@ -109,60 +198,64 @@
                     </div>
                     <div class="section-content">
                         <!-- Project 1 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
                             <div class="experience-details">
-                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
+                                <h3>Bird Species Classification using VGG-16</h3>
                                 <div class="tech-stack">
-                                    <span class="tech-item">Python</span>
-                                    <span class="tech-item">PyTorch</span>
-                                    <span class="tech-item">Transformers</span>
-                                    <span class="tech-item">NLTK</span>
-                                    <span class="tech-item">Hugging Face</span>
-                                    <span class="tech-item">BeautifulSoup</span>
+                                    <span class="tech-item">Keras</span>
+                                    <span class="tech-item">Tensorflow</span>
+                                    <span class="tech-item">Math</span>
+                                    <span class="tech-item">Pandas</span>
+                                    <span class="tech-item">NumPy</span>
+                                    <span class="tech-item">Transfer Learning</span>
                                     <span class="tech-item">Git</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>   
                         <!-- Project 2 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
                             <div class="experience-details">
-                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
+                                <h3>Cancer Cell Classification using Supervised and Unsupervised ML </h3>
                                 <div class="tech-stack">
-                                    <span class="tech-item">Python</span>
-                                    <span class="tech-item">PyTorch</span>
-                                    <span class="tech-item">Transformers</span>
-                                    <span class="tech-item">NLTK</span>
-                                    <span class="tech-item">Hugging Face</span>
-                                    <span class="tech-item">BeautifulSoup</span>
-                                    <span class="tech-item">Git</span>
+                                    <span class="tech-item">L1-penalized SVM</span>
+                                    <span class="tech-item">K-means Clsutering</span>
+                                    <span class="tech-item">Monte-Carlo Stimulation</span>
+                                    <span class="tech-item">Pandas</span>
+                                    <span class="tech-item">Scikit-learn</span>
+                                    <span class="tech-item">NumPy</span>
+                                    <span class="tech-item">Matplotlib and Seaborn</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>  
                         <!-- Project 3 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
                             <div class="experience-details">
-                                <h3>Comparative Analysis of LLMs: DialogGPT vs LLaMA</h3>
+                                <h3>Multi-Label and Multi-Class Classification using SVM</h3>
                                 <div class="tech-stack">
-                                    <span class="tech-item">Python</span>
-                                    <span class="tech-item">PyTorch</span>
-                                    <span class="tech-item">Transformers</span>
-                                    <span class="tech-item">NLTK</span>
-                                    <span class="tech-item">Hugging Face</span>
-                                    <span class="tech-item">BeautifulSoup</span>
-                                    <span class="tech-item">Git</span>
+                                    <span class="tech-item">SVM</span>
+                                    <span class="tech-item">K-means Clustering</span>
+                                    <span class="tech-item">Classifier Chain Method</span>
+                                    <span class="tech-item">SMOTE</span>
+                                    <span class="tech-item">Scikit-learn Face</span>
+                                    <span class="tech-item">NumPy and Pandas</span>
+                                    <span class="tech-item">Matplotlib and Seaborn</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>    
                     </div>
+                    <button class="arrow right-arrow" onclick="shiftSlide(1)">&#10095;</button> <!-- Right arrow -->
                 </div>
                 <!--Software Engineering Section -->
                 <div class="llm-section"> 
@@ -171,7 +264,7 @@
                     </div>
                     <div class="section-content">
                         <!-- Project 1 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/youtube-logo.svg" alt="LLM Comparison Logo">
                             </div>
@@ -183,9 +276,10 @@
                                     <span class="tech-item">JavaScript</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>   
                         <!-- Project 2 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
@@ -201,9 +295,10 @@
                                     <span class="tech-item">Git</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>  
                         <!-- Project 3 -->
-                        <div class="content">
+                        <div class="content" onmouseenter="handleMouseEnter(1)" onmouseleave="handleMouseLeave()">
                             <div class="photo-grid">
                                 <img class="project-picture" src="icons/llmcompare-logo.jpeg" alt="LLM Comparison Logo">
                             </div>
@@ -219,8 +314,10 @@
                                     <span class="tech-item">Git</span>
                                 </div>
                             </div>
+                            <div class="view-details-arrow" onclick="showProjectDetailsInstantly(1)">&#10095;</div>
                         </div>    
                     </div>
+                    <button class="arrow right-arrow" onclick="shiftSlide(1)">&#10095;</button> <!-- Right arrow -->
                 </div>  
             </div>
             <div class="footer">
@@ -238,7 +335,7 @@
                 </div>
             </div>
         </div>
-        
+    <script src="styles/projects.js"></script>   
     </body>
 
 </html>
