@@ -1,18 +1,28 @@
 let hoverTimeout;
 
-// Data for projects (ensure this is accurate and complete)
+// Data for projects
 const projects = [
     {
         id: 1,
         title: 'Personal Nutritionist using Gemini Pro, Langchain and Streamlit',
-        description: 'Detailed description for Project 1...',
-        imageUrl: 'path/to/image1.jpg',
-        // ... other details
+        description: 'An app built with Gemini Pro, Langchain, and Streamlit to provide personalized nutrition plans.',
+        imageUrl: 'assets/icons/projects/nutritionapp_thumbnail.jpeg'
     },
-    // ... other projects
+    {
+        id: 2,
+        title: 'Comparative Analysis of LLMs: DialogGPT vs LLaMA',
+        description: 'A comprehensive analysis between DialogGPT and LLaMA models for natural language processing.',
+        imageUrl: 'assets/icons/projects/llmcompare-logo.jpeg'
+    },
+    {
+        id: 3,
+        title: 'Chatbot with LLaMA-2 and Python',
+        description: 'A chatbot built using LLaMA-2, Langchain, and Python, deployed on a Flask server.',
+        imageUrl: 'assets/icons/projects/llama-2.jpeg'
+    }
 ];
 
-// Function to show and hide arrows based on scroll position
+// Function to update arrow visibility
 function updateArrowVisibility() {
     const container = document.querySelector('.section-content');
     const leftArrow = document.querySelector('.left-arrow');
@@ -24,26 +34,22 @@ function updateArrowVisibility() {
     rightArrow.style.display = container.scrollLeft < maxScrollLeft - singleProjectWidth ? 'block' : 'none';
 }
 
-// Function to shift the projects slide left or right
+// Function to shift the slide
 function shiftSlide(direction) {
     const container = document.querySelector('.section-content');
     const singleProjectWidth = document.querySelector('.content').clientWidth;
-    const totalScrollWidth = container.scrollWidth;
-    const maxScrollLeft = totalScrollWidth - container.clientWidth;
+    const scrollStep = container.clientWidth - singleProjectWidth;
 
-    // Calculate the width of the scroll based on the visible width of the container
-    const scrollStep = container.clientWidth - singleProjectWidth; // Scrolls by almost one full view minus one project
-
-    if (direction === 1 && container.scrollLeft < maxScrollLeft) {
+    if (direction === 1) {
         container.scrollLeft += scrollStep;
-    } else if (direction === -1 && container.scrollLeft > 0) {
+    } else if (direction === -1) {
         container.scrollLeft -= scrollStep;
     }
-    
+
     updateArrowVisibility();
 }
 
-// Function to handle mouse enter on project
+// Function to handle mouse enter
 function handleMouseEnter(projectId) {
     clearTimeout(hoverTimeout);
     hoverTimeout = setTimeout(() => {
@@ -51,41 +57,38 @@ function handleMouseEnter(projectId) {
     }, 1000); // 1 second delay
 }
 
-// Function to handle mouse leave on project
+// Function to handle mouse leave
 function handleMouseLeave() {
     clearTimeout(hoverTimeout);
-    hoverTimeout = setTimeout(()=>{
-        showProjectDetails(projectId)
-    }, 3000)
-    closePopup(); // Optional: close popup immediately when mouse leaves
+    closePopup();
 }
 
-// Function to show project details either instantly on click or after hover
+// Function to show project details
 function showProjectDetails(projectId) {
     const project = projects.find(p => p.id === projectId);
     if (project && !document.querySelector('.project-popup')) {
         const popupContent = `
             <div class="project-popup" onclick="closePopup()">
                 <div class="project-popup-content">
-                    <span class="project-popup-close">&times;</span>
-                    <img src="${project.imageUrl}" alt="${project.title}" />
+                    <span class="project-popup-close" onclick="closePopup()">&times;</span>
+                    <img src="${project.imageUrl}" alt="${project.title}">
                     <h2>${project.title}</h2>
                     <p>${project.description}</p>
                 </div>
             </div>
         `;
-        document.body.innerHTML += popupContent;
+        document.body.insertAdjacentHTML('beforeend', popupContent);
         document.querySelector('.project-popup').style.display = 'block';
     }
 }
 
-// Function to show project details instantly on click (bypassing the hover delay)
+// Function to show project details instantly on click
 function showProjectDetailsInstantly(projectId) {
     clearTimeout(hoverTimeout);
     showProjectDetails(projectId);
 }
 
-// Function to close the project detail popup
+// Function to close the popup
 function closePopup() {
     const popup = document.querySelector('.project-popup');
     if (popup) {
@@ -93,21 +96,22 @@ function closePopup() {
     }
 }
 
-// Event listeners for initialization and scroll events
+// Event listeners for mouse enter, leave, and click
 document.querySelector('.section-content').addEventListener('mouseenter', (event) => {
     if (event.target.matches('.content')) {
-        clearTimeout(hoverTimeout);
-        hoverTimeout = setTimeout(() => {
-            // Assuming the data-id attribute is set to the project's id
-            const projectId = event.target.getAttribute('data-id');
-            showProjectDetails(projectId);
-        }, 1000); // 1 second delay
+        const projectId = event.target.getAttribute('data-id');
+        handleMouseEnter(projectId);
+    }
+}, true);
+
+document.querySelector('.section-content').addEventListener('mouseleave', (event) => {
+    if (event.target.matches('.content')) {
+        handleMouseLeave();
     }
 }, true);
 
 document.querySelector('.section-content').addEventListener('click', (event) => {
     if (event.target.matches('.view-details-arrow')) {
-        clearTimeout(hoverTimeout);
         const projectId = event.target.closest('.content').getAttribute('data-id');
         showProjectDetailsInstantly(projectId);
     }
