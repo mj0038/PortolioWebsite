@@ -1,7 +1,20 @@
 // Experience data
 const experiences = [
     {
-        title: "Application Developer Intern",
+        title: "AI & NLP Engineer",
+        companyLogo: "assets/icons/experience/huro_logo.jpeg",
+        techStack: ["Python", "PyTorch", "GCP (Vertex AI)", "AWS", "Wav2Vec2-BERT", "Whisper", "Distributed Training", "RAG (Retrieval-Augmented Generation)", "NLP", "Model Fine-tuning", "Speech-to-Speech Translation", "A/B Testing", "Unstructured Data Cleaning"],
+        project1: {
+            title: "Real-Time Multilingual Speech-to-Speech Model",
+            description: "Led the development of a real-time multilingual speech-to-speech model, reducing Word Error Rate (WER) by 40% and cutting translation latency to 2 seconds per sentence. Leveraged distributed training on GCP and Vertex AI to ensure scalable performance."
+        },
+        project2: {
+            title: "Infrastructure Deployment and A/B Testing for Wav2Vec2 and Whisper Models",
+            description: "Deployed and set up model infrastructure on GCP and AWS, integrating Wav2Vec2-BERT and Whisper models. Conducted A/B testing for both models, focusing on transcription accuracy and performance. Managed unstructured data cleaning, improving model performance across varied datasets."
+        }
+    },
+    {
+        title: "Data Engineer",
         companyLogo: "assets/icons/experience/adp-logo.png",
         techStack: ["Python", "SQL", "PySpark", "AWS (Glue, Lambda, State Machine, S3, SQS, IAM)", "Databricks", "Jenkins", "Postman", "Terraform", "Jira", "Git"],
         project1: {
@@ -27,7 +40,7 @@ const experiences = [
         }
     },
     {
-        title: "Software Engineer - Freelancing Gig",
+        title: "Data Scientist",
         companyLogo: "assets/icons/experience/DE.png",
         techStack: ["Python", "SQL", "PySpark", "AWS (Glue, Lambda, State Machine, S3, SQS, IAM)", "Databricks", "Jenkins", "Postman", "Terraform", "Jira", "Git"],
         project1: {
@@ -36,7 +49,7 @@ const experiences = [
         }
     },
     {
-        title: "Undergraduate Data Analyst Researcher",
+        title: "Data Analyst",
         companyLogo: "assets/icons/experience/wvu-logo.svg",
         techStack: ["Python", "SQL", "Tableau", "CSS", "HTML", "Git", "ImageJ"],
         project1: {

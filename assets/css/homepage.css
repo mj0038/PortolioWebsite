@@ -83,22 +83,37 @@ body {
         flex-basis: 45%; /* On smaller screens, make each category take roughly half the width */
     }
 }
-.summary{
+.summary {
     color: white;
+    padding: 20px; /* Add padding to create space inside the summary box */
+    margin-bottom: 10px; /* Add space between the summary and the footer */
+    line-height: 1.6; /* Increase line spacing for readability */
+    border-radius: 10px; 
 
 }
-
-@media (max-width: 480px) {
-    .tech-category {
-        flex-basis: 100%; /* On very small screens, stack the categories vertically */
-    }
+.summary h2 {
+    margin-bottom: 15px; /* Adds space between the heading and the first paragraph */
 }
+
+.summary p {
+    margin-bottom: 15px; /* Adds space between paragraphs */
+}
+
+
 .footer {
     background-color: #333; /* Dark background for footer */
     color: white; /* Text color */
     text-align: center; /* Center the content */
     padding: 20px; /* Padding around the content */
     font-size: 14px;
+    margin-top: 5px; /* Add space between the summary and the footer */
+}
+
+@media (max-width: 768px) {
+    .summary {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin-bottom: 30px; /* Adjust margin for smaller screens */
+    }
 }
 
 .footer .social-links a {

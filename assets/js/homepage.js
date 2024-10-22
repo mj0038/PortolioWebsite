@@ -2,7 +2,7 @@
 const introductionData = {
     imageUrl: "assets/images/home/Mridul_headshot.jpeg",
     name: "Hi, I am Mridul Jhawar!!",
-    description: "USC Data Science Graduate | AI & ML Enthusiast | Open to Opportunities | Breaking into the world of Software Engineering | Photographer | Serial Traveler | WVU Alum"
+    description: "AI & NLP Engineer | Architecting Multilingual Models and Human Action Recognition Systems | AI Innovator | USC & WVU Alum | Photographer & World Explorer"
 };
 
 // Tech stack categories
@@ -28,10 +28,14 @@ const techStackData = [
 // Summary section
 const summaryData = `
     <h2>Summary</h2>
-    <p>As an aspiring data scientist with a passion for software development and product building, I have interned as a data analyst, data scientist, and data engineer. I am deeply passionate and an advocate for integrating technology within healthcare to innovate and improve outcomes.</p>
-    <p>I hold a Master's degree in Data Science from the University of Southern California and a Bachelor's degree in Biochemistry from West Virginia University, with minors in Mathematics, Statistics, and Psychology. This unique blend of science and analytics equips me with the skills necessary to tackle complex data-driven challenges.</p>
-    <p>When I'm not immersed in data, you'll find me outdoors, hiking and exploring new places, or at home trying out new recipes and binge-watching Netflix. These personal passions help me maintain a balanced and joyful life.</p>
+    <p>I am an AI & Machine Learning Engineer specializing in Natural Language Processing (NLP) and Large Language Models (LLMs). With a robust background in data science and a passion for developing innovative AI solutions, I have successfully held roles as a data analyst, data scientist, and data engineer. My expertise lies in designing and optimizing machine learning models, building scalable data pipelines, and enhancing user experiences through advanced AI technologies.</p>
+    <p>I hold a Master's degree in Data Science from the University of Southern California and a Bachelor's degree in Biochemistry from West Virginia University, complemented by minors in Mathematics, Statistics, and Psychology. This interdisciplinary education equips me with a unique perspective to tackle complex, data-driven challenges across various domains, including healthcare and technology.</p>
+    <p>At HuroAI, I led the development of a real-time multilingual speech-to-speech model, reducing the Word Error Rate (WER) by 40% and cutting translation latency to just 2 seconds per sentence. I utilized PyTorch and distributed training on GCP and Vertex AI to ensure scalable and efficient performance. Additionally, I spearheaded projects involving Retrieval-Augmented Generation (RAG), enhancing model accuracy and contextual understanding by integrating retrieval-based techniques with large language models.</p>
+    <p>My work extends to prompt engineering, model fine-tuning, and data annotation, where I have successfully improved model performance through iterative refinement and human feedback integration. I thrive in collaborative environments, working cross-functionally to deliver impactful AI solutions that drive accessibility and user engagement.</p>
+    <p>Outside of my professional endeavors, I enjoy hiking, exploring new places, experimenting with new recipes, and staying updated with the latest advancements in AI and technology. These personal interests help me maintain a balanced and creative mindset, fueling my passion for continuous learning and innovation.</p>
+    <p>If you're interested in leveraging cutting-edge AI technologies to solve real-world problems or exploring collaboration opportunities, let's connect! I'm always eager to discuss exciting projects and ways to make AI more powerful and accessible.</p>
 `;
+
 
 // Function to render introduction
 function renderIntroduction() {
